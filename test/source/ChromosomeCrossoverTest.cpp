@@ -1,19 +1,17 @@
 #include <string>
 #include <neat/GeneticAlgorithm.h>
-#include <neat/CrossoverChance.h>
 #include "gtest/gtest.h"
-#include "neat/Chromosome.h"
 
 class Foo : public CrossoverChance {
 public:
-    virtual bool choose(const std::string &a, const std::string &b) {
+    virtual bool choose(const Gene &a, const Gene &b) {
         return true;
     }
 };
 
 class Bar : public CrossoverChance {
 public:
-    virtual bool choose(const std::string &a, const std::string &b) {
+    virtual bool choose(const Gene &a, const Gene &b) {
         return false;
     }
 };

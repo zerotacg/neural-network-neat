@@ -3,15 +3,16 @@
 
 #include <string>
 #include "CrossoverChance.h"
+#include "Chromosome.h"
 
 class GeneticAlgorithm {
 private:
-    CrossoverChance &crossoverChance;
+    CrossoverChance &crossover_chance_;
 
 public:
     explicit GeneticAlgorithm(CrossoverChance &crossoverChance);
 
-    std::string crossover(const std::string &a, const std::string &b);
+    Chromosome crossover(const Chromosome &a, const Chromosome &b);
 };
 
 

@@ -1,16 +1,17 @@
 #include "GeneticAlgorithm.h"
 
-GeneticAlgorithm::GeneticAlgorithm(CrossoverChance &crossoverChance) : crossoverChance(crossoverChance) {}
+GeneticAlgorithm::GeneticAlgorithm(CrossoverChance &crossoverChance) : crossover_chance_(crossoverChance) {}
 
-std::string GeneticAlgorithm::crossover(const std::string &a, const std::string &b) {
-    std::string child;
+Chromosome GeneticAlgorithm::crossover(const Chromosome &a, const Chromosome &b) {
+    Chromosome child;
 
-    if (crossoverChance.choose(a, b)) {
-        for (const auto gene : a) {
+    for (const auto gene : a) {
+        if (crossover_chance_.choose(gene, gene)) {
             child.push_back(gene);
         }
-    } else {
-        for (const auto gene : b) {
+    }
+    for (const auto gene : b) {
+        if (!crossover_chance_.choose(gene, gene)) {
             child.push_back(gene);
         }
     }
