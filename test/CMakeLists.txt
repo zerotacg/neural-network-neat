@@ -31,7 +31,5 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
     include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
-# Now simply link against gtest or gtest_main as needed. Eg
-add_executable(scafoldintg-test source/ScaffoldingTest.cpp)
-target_link_libraries(scafoldintg-test gtest_main)
-add_test(NAME scafoldintg-test COMMAND scafoldintg-test)
+include_directories(${CMAKE_SOURCE_DIR}/production/source)
+add_subdirectory(source)
