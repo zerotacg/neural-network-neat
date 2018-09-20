@@ -5,11 +5,11 @@
 #include "CrossoverChance.h"
 #include "Chromosome.h"
 
-class GeneticAlgorithm {
+class SinglePointCrossover {
 private:
 
 public:
-    explicit GeneticAlgorithm();
+    explicit SinglePointCrossover();
 
     Chromosome crossover(const Chromosome &a, const Chromosome &b, int crossoverPoint = 0);
 };
