@@ -7,12 +7,11 @@
 
 class GeneticAlgorithm {
 private:
-    CrossoverChance &crossover_chance_;
 
 public:
-    explicit GeneticAlgorithm(CrossoverChance &crossoverChance);
+    explicit GeneticAlgorithm();
 
-    Chromosome crossover(const Chromosome &a, const Chromosome &b);
+    Chromosome crossover(const Chromosome &a, const Chromosome &b, int crossoverPoint = 0);
 };
 
 
