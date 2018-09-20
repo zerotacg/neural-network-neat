@@ -28,3 +28,12 @@ TEST(ChromosomeCrossoverTest, useHalfOfEachParent) {
 
     ASSERT_EQ("ehi", child);
 }
+
+TEST(ChromosomeCrossoverTest, crossoverPointIsOutsideOfFirstParentsRange) {
+    auto ga = SinglePointCrossover();
+    auto a = std::string("j");
+    auto b = std::string("klm");
+    auto child = ga.crossover(a, b, 2);
+
+    ASSERT_EQ("jm", child);
+}

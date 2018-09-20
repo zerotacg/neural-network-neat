@@ -11,7 +11,7 @@ private:
 public:
     explicit SinglePointCrossover();
 
-    Chromosome crossover(const Chromosome &a, const Chromosome &b, int crossoverPoint = 0);
+    Chromosome crossover(const Chromosome &a, const Chromosome &b, size_t crossoverPoint = 0);
 };
 
 
