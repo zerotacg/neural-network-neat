@@ -37,3 +37,12 @@ TEST(ChromosomeCrossoverTest, crossoverPointIsOutsideOfFirstParentsRange) {
 
     ASSERT_EQ("jm", child);
 }
+
+TEST(ChromosomeCrossoverTest, crossoverPointIsOutsideOfSecondParentsRange) {
+    auto ga = SinglePointCrossover();
+    auto a = std::string("nop");
+    auto b = std::string("q");
+    auto child = ga.crossover(a, b, 2);
+
+    ASSERT_EQ("no", child);
+}

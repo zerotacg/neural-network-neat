@@ -9,8 +9,8 @@ Chromosome SinglePointCrossover::crossover(const Chromosome &a, const Chromosome
     auto begin = a.begin();
     auto end = std::next(begin, std::min(crossoverPoint, a.size()));
     std::copy(begin, end, childInserter);
-    
-    auto begin_b = std::next(b.begin(), crossoverPoint);
+
+    auto begin_b = std::next(b.begin(), std::min(crossoverPoint, b.size()));
     auto end_b = b.end();
     std::copy(begin_b, end_b, childInserter);
 
